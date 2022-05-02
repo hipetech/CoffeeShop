@@ -1,17 +1,18 @@
 import './NavBar.css'
 import { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Navbar extends Component {
     render(){
         return(
             <header>
                 <nav class="header">
-                    <a href="#" class="nav-item">
+                    <Link to="/" class="nav-item">
                         <img src="Images/coffee-beans-logo.svg" alt="" />
                         Coffee house
-                    </a>
-                    <a href="#" class="nav-item">Our Coffee</a>
-                    <a href="#" class="nav-item">For your pleasure</a>
+                    </Link>
+                    <Link to="/ourCoffee" class="nav-item">Our Coffee</Link>
+                    <Link to="/forYourPleasure" class="nav-item">For your pleasure</Link>
                 </nav>
             </header>
             )
