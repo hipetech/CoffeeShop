@@ -8,7 +8,7 @@ class Navbar extends Component {
             <header>
                 <nav class="header">
                     <Link to="/" class="nav-item">
-                        <img src="Images/coffee-beans-logo.svg" alt="" />
+                        <img src="coffee-beans-logo.svg" alt="Logo" />
                         Coffee house
                     </Link>
                     <Link to="/ourCoffee" class="nav-item">Our Coffee</Link>

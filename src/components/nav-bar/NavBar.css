@@ -5,6 +5,10 @@ a:visited {
     text-decoration: none;
 }
 
+body {
+    background-color: antiquewhite;
+}
+
 .nav-item {
     
     color: black;
