@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap');
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+.nav-item {
+    
+    color: black;
+    font-size: 12px;
+    margin-left: 4%;
+}
+
+
+.header {
+    margin-left: 5%;
+    margin-top: 2%;
+}
