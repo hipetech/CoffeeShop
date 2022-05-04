@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap');
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+.nav-item {
+    
+    color: white;
+    font-size: 12px;
+    margin-left: 4%;
+}
+
+
+.header {
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+
+.active {
+    transition: 0.3s;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+footer {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white
+    
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    
+}
+
+.footer-nav {
+    color: black;
+    font-size: 12px;
+    margin-left: 1%;
+    margin-right: 1%;
+
+}
+
+.footer-logo {
+    margin-top: 2%;
+}

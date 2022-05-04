@@ -1,6 +1,14 @@
+import AboutUs from "../components/AboutUs/AboutUs";
+import Banner from "../components/Banner/Banner";
+import Products from "../components/Products/Products";
+
 const MainPage = () => {
     return(
-        <h1>MainPage</h1>
+        <>
+            <Banner />
+            <AboutUs />
+            <Products />
+        </>
     )
 }
 

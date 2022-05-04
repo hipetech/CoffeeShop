@@ -1,0 +1,56 @@
+body {
+    background-image: url(../../../public/background.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 100%;
+    background-attachment: fixed;
+    font-family: 'Merienda', cursive;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 8%;
+    margin-bottom: 14%;
+}
+
+.container-title {
+    margin-bottom: 1%;
+}
+
+
+.container-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 1px 1px 6px black;
+}
+
+
+.more-btn {
+    color: white;
+    border: 1px solid #222222;
+    border-radius: 10px;
+    border-color: white;
+    font-family: 'Merienda', cursive;
+    font-size: 14px;
+    border-radius: 5px;
+    background: transparent;
+    width: 15%;
+    height: 30px;
+    cursor: pointer;
+}
+
+.btn-pos {
+    margin-top: 2%;
+}
