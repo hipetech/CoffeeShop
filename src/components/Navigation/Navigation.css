@@ -69,6 +69,7 @@ footer {
 .elem {
     transition: 0.5s;
     border: white 3px solid;
+    background-color: white;
     border-radius: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -150,6 +151,7 @@ footer {
 }
 
 @media screen and (max-width: 600px){
-
-    
+    .burger {
+        width: 40px;
+    }
 }
