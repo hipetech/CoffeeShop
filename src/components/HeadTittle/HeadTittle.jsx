@@ -9,6 +9,7 @@ const HeadTittle = ({backgroundImage, titleText}) => {
                 {`
                     body {
                         background-image: url(${backgroundImage});
+                        background-attachment: scroll;
 
                     }
                 `}
