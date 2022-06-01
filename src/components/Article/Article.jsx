@@ -1,4 +1,6 @@
-import './Article.css'
+import React from "react";
+import "./Article.css";
+import PropTypes from "prop-types";
 
 const Article = ({imagePath, title}) => {
     return(
@@ -10,7 +12,7 @@ const Article = ({imagePath, title}) => {
                 <h2>
                     {title}
                 </h2>
-                <img src="./Beans-logo-dark.svg" alt="" />
+                <img src={"./Beans-logo-dark.svg"} alt="Logo" />
                 <p>
                     Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
                 </p>
@@ -23,7 +25,12 @@ const Article = ({imagePath, title}) => {
                 </p>
             </div>
         </article>
-    )
-}
+    );
+};
 
-export default Article
+Article.propTypes = {
+    imagePath: PropTypes.string,
+    title: PropTypes.string
+};
+
+export default Article;

@@ -1,7 +1,9 @@
-import './HeadTittle.css'
+import React from "react";
+import "./HeadTittle.css";
+import PropTypes from "prop-types";
 
 const HeadTittle = ({backgroundImage, titleText}) => {
-    return(
+    return (
         <>
             <style>
                 {`
@@ -12,12 +14,17 @@ const HeadTittle = ({backgroundImage, titleText}) => {
                 `}
             </style>
             <article className="title">
-                    <h1>
-                        {titleText}
-                    </h1>                
+                <h1>
+                    {titleText}
+                </h1>
             </article>
         </>
-    )
-}
+    );
+};
 
-export default HeadTittle
+HeadTittle.propTypes = {
+    backgroundImage: PropTypes.string,
+    titleText: PropTypes.string
+};
+
+export default HeadTittle;
