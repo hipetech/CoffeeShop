@@ -12,9 +12,8 @@ class OurCoffee extends Component {
 
     render() {
         const hrStyle = {
-            width: "15%",
-            color: "black",
-            border: "1px solid"
+            width: "240px",
+            backgroundColor: "black"
         };
         return (
             <>

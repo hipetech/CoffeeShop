@@ -1,34 +1,44 @@
 import React from "react";
 import "./CatalogueFilter.css";
-import {Component} from "react";
+import { Component } from "react";
 
 class CatalogueFilter extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            filterCategory: ["Brazil", "Kenya", "Columbia"],
+            isActive: false
+        };
     }
+
+    changeStatus = (e) => {
+        this.setState({isActive: !(this.state.isActive)});
+        e.target.classList.add("filter-selected");
+    };
 
     render() {
         return (
             <div className="search-panel">
                 <div className="input">
                     <label htmlFor="search" className="search-label">Looking for</label>
-                    <input type="text" placeholder="start typing here..." id="search" onFocus="" className="search-input"/>
+                    <input type="text" placeholder="start typing here..." id="search" onFocus="" className="search-input" />
                 </div>
                 <div className="filter">
                     <div className="filter-title">
                         <h4>Or filter</h4>
                     </div>
                     <div className="filter-cards">
-                        <button className="filer-card">
-                            <span className="btn-text">Brazil</span>
-                        </button>
-                        <button className="filer-card">
-                            <span className="btn-text">Kenya</span>
-                        </button>
-                        <button className="filer-card">
-                            <span className="btn-text">Columbia</span>
-                        </button>
+                        {
+                            this.state.filterCategory.map((el, index) => {
+                                return (
+                                    <React.Fragment key={index}>
+                                        <button className="filer-card" onClick={this.changeStatus}>
+                                            <span className="btn-text">{el}</span>
+                                        </button>
+                                    </React.Fragment>
+                                );
+                            })
+                        }
                     </div>
                 </div>
             </div>
