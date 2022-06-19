@@ -48,6 +48,11 @@ h2 {
     cursor: pointer;
 }
 
+.more-btn:hover {
+    background-color: white;
+    color: black;
+}
+
 .btn-pos {
     margin-top: 18px;
 }

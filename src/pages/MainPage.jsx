@@ -19,7 +19,7 @@ class MainPage extends React.Component {
     render(){
         return (
             <>
-                <Banner/>
+                <Banner link={"/ourCoffee"}/>
                 <AboutUs/>
                 <Products itemsData = {this.state.itemsData}/>
             </>
