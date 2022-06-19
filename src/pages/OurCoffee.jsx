@@ -7,7 +7,6 @@ import ItemCatalogue from "../components/ItemCatalogue/ItemCatalogue";
 class OurCoffee extends Component {
     constructor(props) {
         super(props);
-        this.setState = {};
     }
 
     render() {

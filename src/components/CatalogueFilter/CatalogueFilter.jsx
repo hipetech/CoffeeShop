@@ -25,7 +25,9 @@ class CatalogueFilter extends Component {
                 </div>
                 <div className="filter">
                     <div className="filter-title">
-                        <h4>Or filter</h4>
+                        <h4>
+                            Or filter
+                        </h4>
                     </div>
                     <div className="filter-cards">
                         {
