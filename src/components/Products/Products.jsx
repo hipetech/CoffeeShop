@@ -4,13 +4,14 @@ import PropTypes from "prop-types";
 import ItemCard from "../itemCard/itemCard";
 
 const Products = (props) => {
+
     return (
         <section className="products">
             <h2 className="products-title">Our best</h2>
             <div className="cards">
                 {
                     props.itemsData.map((el, index) => {
-                        return <ItemCard key={index} itemData={el} />;
+                        return <ItemCard key={index} itemData={el}/>;
                     })
                 }
             </div>

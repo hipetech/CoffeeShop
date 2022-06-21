@@ -17,7 +17,8 @@ export default class ItemCard extends React.Component {
                     </div>
                     <div className="content-container">
                         <h3>{this.props.itemData.heading}</h3>
-                        <h3 className="product-price">{this.props.itemData.price}</h3>
+                        <h3>{this.props.itemData.country}</h3>
+                        <h3>{this.props.itemData.price}</h3>
                     </div>
                 </div>
 

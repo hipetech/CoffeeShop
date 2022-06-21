@@ -67,6 +67,7 @@
     align-items: center;
     margin-right: 5px;
     padding: 7px 20px;
+    transition-duration: 0.25s;
 
 }
 
@@ -75,7 +76,6 @@
 }
 
 .filer-card:hover {
-    transition-duration: 0.25s;
     transform: scale(1.1);
 }
 

@@ -1,17 +1,31 @@
-import React from "react";
+import React, {Component} from "react";
 import "./CatalogueFilter.css";
-import { Component } from "react";
+import PropTypes from "prop-types";
 
 class CatalogueFilter extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
-            filterCategory: ["Brazil", "Kenya", "Columbia"],
+            countries: this.filterItemsDuplicate("country")
         };
     }
 
+    filterItemsDuplicate = (prop) => {
+        let uniqueIds = [];
+
+        return this.props.itemsData.filter((el) => {
+            if (!(uniqueIds.includes(el[prop]))) {
+                uniqueIds.push(el[prop]);
+
+                return true;
+            }
+
+            return false;
+        });
+    };
+
     changeStatus = (e) => {
-        this.setState({isActive: !(this.state.isActive)});
         e.target.classList.toggle("filter-selected");
     };
 
@@ -20,7 +34,7 @@ class CatalogueFilter extends Component {
             <div className="search-panel">
                 <div className="input">
                     <label htmlFor="search" className="search-label">Looking for</label>
-                    <input type="text" placeholder="start typing here..." id="search" onFocus="" className="search-input" />
+                    <input type="text" placeholder="start typing here..." id="search" className="search-input" />
                 </div>
                 <div className="filter">
                     <div className="filter-title">
@@ -30,11 +44,11 @@ class CatalogueFilter extends Component {
                     </div>
                     <div className="filter-cards">
                         {
-                            this.state.filterCategory.map((el, index) => {
+                            this.state.countries.map((el, index) => {
                                 return (
                                     <React.Fragment key={index}>
                                         <button className="filer-card" onClick={this.changeStatus}>
-                                            {el}
+                                            {el["country"]}
                                         </button>
                                     </React.Fragment>
                                 );
@@ -46,5 +60,9 @@ class CatalogueFilter extends Component {
         );
     }
 }
+
+CatalogueFilter.propTypes = {
+    itemsData: PropTypes.array
+};
 
 export default CatalogueFilter;
