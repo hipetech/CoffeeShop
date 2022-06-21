@@ -7,13 +7,12 @@ class CatalogueFilter extends Component {
         super(props);
         this.state = {
             filterCategory: ["Brazil", "Kenya", "Columbia"],
-            isActive: false
         };
     }
 
     changeStatus = (e) => {
         this.setState({isActive: !(this.state.isActive)});
-        e.target.classList.add("filter-selected");
+        e.target.classList.toggle("filter-selected");
     };
 
     render() {
@@ -35,7 +34,7 @@ class CatalogueFilter extends Component {
                                 return (
                                     <React.Fragment key={index}>
                                         <button className="filer-card" onClick={this.changeStatus}>
-                                            <span className="btn-text">{el}</span>
+                                            {el}
                                         </button>
                                     </React.Fragment>
                                 );
