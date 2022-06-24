@@ -34,7 +34,8 @@ class CatalogueFilter extends Component {
             <div className="search-panel">
                 <div className="input">
                     <label htmlFor="search" className="search-label">Looking for</label>
-                    <input type="text" placeholder="start typing here..." id="search" className="search-input" />
+                    <input type="text" placeholder="start typing here..." id="search"
+                        className="search-input" autoComplete={"off"}/>
                 </div>
                 <div className="filter">
                     <div className="filter-title">

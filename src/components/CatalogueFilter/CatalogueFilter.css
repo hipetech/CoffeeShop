@@ -75,10 +75,6 @@
     margin-right: 0;
 }
 
-.filer-card:hover {
-    transform: scale(1.1);
-}
-
 .filter-selected {
     background-color: #604a38;
     color: white;
