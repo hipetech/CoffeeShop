@@ -14,8 +14,11 @@ class ItemCatalogue extends Component {
         return (
             <>
                 <section className="coffee-catalogue">
-                    <CatalogueFilter itemsData={this.props.itemsData} search={this.props.search}/>
-                    <CatalogueItems itemsData={this.props.itemsData} />
+                    <CatalogueFilter itemsData={this.props.itemsData} 
+                        search={this.props.search}
+                        toggleFilter={this.props.toggleFilter}
+                    />
+                    <CatalogueItems itemsData={this.props.itemsData}/>
                 </section>
             </>
         );
@@ -24,7 +27,8 @@ class ItemCatalogue extends Component {
 
 ItemCatalogue.propTypes = {
     itemsData: PropTypes.array,
-    search: PropTypes.func
+    search: PropTypes.func,
+    toggleFilter: PropTypes.func
 };
 
 export default ItemCatalogue;

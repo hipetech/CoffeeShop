@@ -7,7 +7,8 @@ class CatalogueFilter extends Component {
         super(props);
 
         this.state = {
-            countries: this.filterItemsDuplicate("country")
+            countries: this.filterItemsDuplicate("country"),
+            btnStatus: false
         };
     }
 
@@ -27,7 +28,19 @@ class CatalogueFilter extends Component {
 
     changeStatus = (e) => {
         e.target.classList.toggle("filter-selected");
+        this.setState({btnStatus: !(this.state.btnStatus)});
     };
+
+    checkClass = (e, itemClass) => {
+        return e.target.classList.contains(itemClass);
+    };
+
+    btnClick = (e, country) => {
+        this.changeStatus(e);
+        const trigger = this.checkClass(e, "filter-selected");
+        this.props.toggleFilter(e, trigger, country);
+    };
+
 
     render() {
         return (
@@ -46,10 +59,13 @@ class CatalogueFilter extends Component {
                     <div className="filter-cards">
                         {
                             this.state.countries.map((el, index) => {
+                                const country = el["country"];
                                 return (
                                     <React.Fragment key={index}>
-                                        <button className="filer-card" onClick={this.changeStatus}>
-                                            {el["country"]}
+                                        <button className="filer-card" onClick={(e) => {
+                                            this.btnClick(e, country);
+                                        }}>
+                                            {country}
                                         </button>
                                     </React.Fragment>
                                 );
@@ -64,7 +80,8 @@ class CatalogueFilter extends Component {
 
 CatalogueFilter.propTypes = {
     itemsData: PropTypes.array,
-    search: PropTypes.func
+    search: PropTypes.func,
+    toggleFilter: PropTypes.func
 };
 
 export default CatalogueFilter;
