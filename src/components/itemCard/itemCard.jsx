@@ -4,15 +4,20 @@ import PropTypes from "prop-types";
 import {NavLink} from "react-router-dom";
 
 export default class ItemCard extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-
     }
 
-    render(){
+    render() {
         return (
             <>
-                <NavLink to={"/itemPage"} className={"nav-link"}>
+                <NavLink to={"/itemPage"} className={"nav-link"} state={{
+                    image: this.props.itemData.img,
+                    heading: this.props.itemData.heading,
+                    country: this.props.itemData.country,
+                    price: this.props.itemData.price,
+                    description: this.props.itemData.description
+                }}>
                     <div className="card">
                         <div className="img-container">
                             <img className="product-img" src={this.props.itemData.img} alt="Coffee"/>

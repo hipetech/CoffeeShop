@@ -17,7 +17,7 @@ export class ItemDescription extends React.Component {
                     <article className="itemInfo">
                         <div className="descriptionTittle">
                             <h2>
-                                About it
+                                {this.props.heading}
                             </h2>
                             <img src={"./Beans-logo-dark.svg"} alt="Logo" />
                         </div>
@@ -39,6 +39,7 @@ export class ItemDescription extends React.Component {
 
 ItemDescription.propTypes = {
     image: PropTypes.string,
+    heading: PropTypes.string,
     country: PropTypes.string,
     description: PropTypes.string,
     price: PropTypes.string
