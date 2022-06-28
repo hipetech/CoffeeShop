@@ -1,6 +1,6 @@
 .itemsCards {
     width: 850px;
-    margin: 0 auto;
+    margin: 20px auto;
     display: flex;
     justify-content: center;
     align-content: space-around;
