@@ -44,3 +44,7 @@
 .content-container > h3 {
     text-align: right;
 }
+
+.nav-link {
+    color: black;
+}

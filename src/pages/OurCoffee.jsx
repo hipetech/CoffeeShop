@@ -9,17 +9,53 @@ class OurCoffee extends Component {
         super(props);
         this.state = {
             itemsData: [
-                {img: "product-3.png", heading: "AROMISTICO Coffee 1 kg", country: "Brazil", price: "6.99$"},
-                {img: "product-3.png", heading: "BROMISTICO Coffee 1 kg", country: "Kenya", price: "6.99$"},
-                {img: "product-3.png", heading: "CROMISTICO Coffee 1 kg", country: "Columbia", price: "6.99$"},
-                {img: "product-3.png", heading: "DROMISTICO Coffee 1 kg", country: "Brazil", price: "6.99$"},
-                {img: "product-3.png", heading: "EROMISTICO Coffee 1 kg", country: "Brazil", price: "6.99$"},
-                {img: "product-3.png", heading: "FROMISTICO Coffee 1 kg", country: "Brazil", price: "6.99$"}
+                {
+                    img: "product-3.png",
+                    heading: "AROMISTICO Coffee 1 kg",
+                    country: "Brazil",
+                    price: "6.99$",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                },
+                {
+                    img: "product-3.png",
+                    heading: "BROMISTICO Coffee 1 kg",
+                    country: "Kenya",
+                    price: "6.99$",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                },
+                {
+                    img: "product-3.png",
+                    heading: "CROMISTICO Coffee 1 kg",
+                    country: "Columbia",
+                    price: "6.99$",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                },
+                {
+                    img: "product-3.png",
+                    heading: "DROMISTICO Coffee 1 kg",
+                    country: "Brazil",
+                    price: "6.99$",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                },
+                {
+                    img: "product-3.png",
+                    heading: "EROMISTICO Coffee 1 kg",
+                    country: "Brazil",
+                    price: "6.99$",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                },
+                {
+                    img: "product-3.png",
+                    heading: "FROMISTICO Coffee 1 kg",
+                    country: "Brazil",
+                    price: "6.99$",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                }
             ],
             filterStatus: false
         };
         this.filterList = [];
-        this.filtered = this.state.itemsData;
+        this.restored = this.state.itemsData;
     }
 
     searchEmp = (items, term) => {
@@ -28,19 +64,19 @@ class OurCoffee extends Component {
                 return item.heading.indexOf(term) > -1;
             });
         } else {
-            return this.filtered;
+            return items;
         }
     };
 
     searchElement = (e) => {
-        this.setState({itemsData: this.searchEmp(this.filtered, e.target.value)});
+        this.setState({itemsData: this.searchEmp(this.restored, e.target.value)});
     };
 
     filter = () => {
         if (this.filterList.length !== 0) {
-            this.setState({itemsData: this.filtered.filter(item => this.filterList.includes(item.country))});
+            this.setState({itemsData: this.restored.filter(item => this.filterList.includes(item.country))});
         } else {
-            this.setState({itemsData: this.filtered});
+            this.setState({itemsData: this.restored});
         }
     };
 
