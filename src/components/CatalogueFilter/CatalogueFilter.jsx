@@ -5,11 +5,13 @@ import PropTypes from "prop-types";
 class CatalogueFilter extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             countries: this.filterItemsDuplicate("country"),
-            btnStatus: false
+            btnStatus: false,
+            inputValue: ""
         };
+
+        this.filterButtons = document.getElementsByClassName("filer-card");
     }
 
     filterItemsDuplicate = (prop) => {
@@ -31,6 +33,18 @@ class CatalogueFilter extends Component {
         this.setState({btnStatus: !(this.state.btnStatus)});
     };
 
+    resetButtons = () => {
+        const elements = this.filterButtons;
+
+        for (let i = 0; i < elements.length; i++) {
+            if (elements[i].classList.contains("filter-selected")) {
+                elements[i].classList.remove("filter-selected");
+            }
+        }
+
+        this.setState({btnStatus: false});
+    };
+
     checkClass = (e, itemClass) => {
         return e.target.classList.contains(itemClass);
     };
@@ -48,7 +62,12 @@ class CatalogueFilter extends Component {
                 <div className="input">
                     <label htmlFor="search" className="search-label">Looking for</label>
                     <input type="text" placeholder="start typing here..." id="search"
-                        className="search-input" autoComplete={"off"} onChange={this.props.search}/>
+                        className="search-input" autoComplete={"off"} onChange={(e) => {
+                            this.resetButtons();
+                            this.setState({inputValue: e.target.value});
+                            this.props.search(e);
+                        }}
+                        value={this.state.inputValue}/>
                 </div>
                 <div className="filter">
                     <div className="filter-title">
@@ -64,6 +83,7 @@ class CatalogueFilter extends Component {
                                     <React.Fragment key={index}>
                                         <button className="filer-card" onClick={(e) => {
                                             this.btnClick(e, country);
+                                            this.setState({inputValue: ""});
                                         }}>
                                             {country}
                                         </button>
@@ -81,7 +101,8 @@ class CatalogueFilter extends Component {
 CatalogueFilter.propTypes = {
     itemsData: PropTypes.array,
     search: PropTypes.func,
-    toggleFilter: PropTypes.func
+    toggleFilter: PropTypes.func,
+    filterReset: PropTypes.func
 };
 
 export default CatalogueFilter;
